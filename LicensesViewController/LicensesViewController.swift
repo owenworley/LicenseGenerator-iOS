@@ -14,7 +14,7 @@ import UIKit
 public class LicensesViewController : UIViewController {
   
   /// The tableView
-  let tableView = UITableView(frame: CGRect.zero, style: .Grouped)
+  public let tableView = UITableView(frame: CGRect.zero, style: .Grouped)
   
   /// The tableView's UITableViewDataSource.
   var dataSource: LicensesDataSource!
@@ -96,13 +96,13 @@ public class LicensesViewController : UIViewController {
 
 // MARK: - LicenseCell
 
-class LicenseCell : UITableViewCell {
+public class LicenseCell : UITableViewCell {
   
   /// The title label of the cell.
-  let titleLabel = UILabel()
+  public let titleLabel = UILabel()
   
   /// The body label of the cell.
-  let bodyLabel = UILabel()
+  public let bodyLabel = UILabel()
   
   /// Boolean tracking if the constrains have been setup.
   private var didSetupConstraints = false
@@ -140,11 +140,11 @@ class LicenseCell : UITableViewCell {
     updateConstraintsIfNeeded()
   }
   
-  required init?(coder aDecoder: NSCoder) {
+  required public init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
   
-  override func updateConstraints() {
+  override public func updateConstraints() {
     if(!didSetupConstraints) {
       let noLayoutOption = NSLayoutFormatOptions(rawValue: 0)
       let views: [String: AnyObject] = [
